@@ -1,0 +1,38 @@
+Source: golang-golang-x-oauth2
+Section: devel
+Priority: optional
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Martín Ferrari <tincho@debian.org>,
+           Michael Stapelberg <stapelberg@debian.org>,
+           Tim Potter <tpot@hpe.com>,
+Build-Depends: debhelper (>= 10),
+               dh-golang (>= 1.17~),
+               golang-any,
+               golang-golang-x-net-dev,
+Standards-Version: 4.1.0
+Homepage: http://golang.org/x/oauth2
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-go/packages/golang-golang-x-oauth2.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-go/packages/golang-golang-x-oauth2.git
+XS-Go-Import-Path: golang.org/x/oauth2
+Testsuite: autopkgtest-pkg-go
+
+Package: golang-golang-x-oauth2-dev
+Architecture: all
+Depends: golang-golang-x-net-dev,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: make OAuth2 authorized and authenticated HTTP requests
+ Package oauth2 provides support for making OAuth2 authorized and authenticated
+ HTTP requests. It can additionally grant authorization with Bearer JWT.
+
+Package: golang-golang-x-oauth2-google-dev
+Architecture: all
+Depends: golang-golang-x-oauth2-dev (= ${source:Version}),
+         golang-google-appengine-dev,
+         golang-google-cloud-compute-metadata-dev,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Google APIs support for OAuth2
+ Package oauth2/google provides support for making OAuth2 authorized and
+ authenticated HTTP requests against Google APIs. It can additionally grant
+ authorization with Bearer JWT.
